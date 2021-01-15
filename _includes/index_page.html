@@ -1,0 +1,32 @@
+<header class="panel-cover" style="background-image">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+        <img src="{{ site.baseurl }}/images/{{ site.pic }}" class="user-image" alt="My Profile Photo">
+        <h1 class="panel-cover__title panel-title">{{ site.title }}</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">{{ site.description }}</p>
+        <p class="panel-cover__description_tiny">{{ site.description_tiny }}</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+
+        <nav class="cover-navigation cover-navigation--primary">
+          <ul class="navigation">
+            {% for link in site.data.index_links %}
+            {% if link.link %}
+            <li class="navigation__item"><a href="/{{ link.link }}" title="{{ link.hover_text }}" class="blog-button">{{
+                link.title }}</a></li>
+            {% else %}
+            <li class="navigation__item"><a href="{{ link.external_url }}" title="{{ link.hover_text }}"
+                class="blog-button">{{
+                link.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+          </ul>
+        </nav>
+      </div> <!-- panel-main__content -->
+    </div> <!-- panel-main__inner panel-inverted -->
+    <div class="panel-cover--overlay"></div>
+  </div> <!-- panel-main -->
+</header>
